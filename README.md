@@ -1,2 +1,2 @@
 # hello-world
-first step for me to make a great project
+I don't know what to say. It's just for something new.
