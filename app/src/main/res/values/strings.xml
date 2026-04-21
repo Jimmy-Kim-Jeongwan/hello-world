@@ -1,4 +1,46 @@
 <resources>
-    <string name="app_name">Hello World</string>
+    <string name="app_name">EMS 승강기 제어</string>
     <string name="hello_world">Hello, World!</string>
+
+    <!-- 섹션 제목 -->
+    <string name="section_connection">🔗 서버 연결</string>
+    <string name="section_status">📊 승강기 상태</string>
+    <string name="section_control">🎮 제어</string>
+    <string name="section_log">📋 통신 로그</string>
+
+    <!-- 입력 힌트 -->
+    <string name="hint_ip">서버 IP</string>
+    <string name="hint_port">포트</string>
+    <string name="hint_did">호기</string>
+
+    <!-- 버튼 -->
+    <string name="btn_connect">연결</string>
+    <string name="btn_disconnect">연결 해제</string>
+    <string name="btn_hall_front_up">정면 UP ↑</string>
+    <string name="btn_hall_rear_up">후면 UP ↑</string>
+    <string name="btn_hall_front_dn">정면 DN ↓</string>
+    <string name="btn_hall_rear_dn">후면 DN ↓</string>
+    <string name="btn_car_front">카 정면</string>
+    <string name="btn_car_rear">카 후면</string>
+    <string name="btn_door_open">도어 열림</string>
+    <string name="btn_door_close">도어 닫힘</string>
+    <string name="btn_clear">지우기</string>
+
+    <!-- 레이블 -->
+    <string name="label_floor">현재 층</string>
+    <string name="label_floor_unit">층</string>
+    <string name="label_dir">방향</string>
+    <string name="label_door">도어</string>
+    <string name="label_op_status">운전 상태</string>
+    <string name="label_target_floor">목표 층</string>
+    <string name="label_hall_call">승강장 호출</string>
+    <string name="label_car_call">카 호출</string>
+    <string name="label_door_ctrl">도어 제어</string>
+
+    <!-- 연결 상태 -->
+    <string name="state_disconnected">● 연결 안됨</string>
+    <string name="state_connecting">● 연결 중…</string>
+    <string name="state_connected">● 연결됨</string>
+    <string name="state_error">● 오류</string>
+    <string name="error_ip_required">서버 IP를 입력하세요</string>
 </resources>
