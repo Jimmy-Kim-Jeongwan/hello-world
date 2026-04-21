@@ -87,7 +87,8 @@ class EmsSocket(private val scope: CoroutineScope) {
                     // 완성된 패킷 단위로 추출
                     while (buf.length >= 4) {
                         val lenStr = buf.substring(0, 4)
-                        val contentLen = lenStr.toIntOrNull() ?: run {
+                        val contentLen = lenStr.toIntOrNull()
+                        if (contentLen == null) {
                             buf.clear()  // 파싱 불가 — 버퍼 초기화
                             break
                         }
