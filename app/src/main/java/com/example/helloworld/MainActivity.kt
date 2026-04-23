@@ -77,15 +77,20 @@ class MainActivity : AppCompatActivity() {
             hideKeyboard()
             val host = binding.editIp.text.toString().trim()
             val port = binding.editPort.text.toString().toIntOrNull() ?: 3000
-            val did  = binding.editDid.text.toString().trim().ifEmpty { "01" }
             if (host.isEmpty()) {
                 Toast.makeText(this, R.string.error_ip_required, Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            vm.connect(host, port, did)
+            vm.connect(host, port)
         }
 
         binding.btnDisconnect.setOnClickListener { vm.disconnect() }
+
+        binding.btnChangeDid.setOnClickListener {
+            hideKeyboard()
+            val did = binding.editDid.text.toString().trim().ifEmpty { "01" }
+            vm.changeDid(did)
+        }
 
         // 승강장 호출
         binding.btnHallFrontUp.setOnClickListener   { vm.hallCall(EmsParam.HALL_FRONT_UP,   getFloor()) }
@@ -115,7 +120,8 @@ class MainActivity : AppCompatActivity() {
             binding.btnHallFrontDown, binding.btnHallRearDown,
             binding.btnCarFront, binding.btnCarRear,
             binding.btnDoorOpen, binding.btnDoorClose,
-            binding.editFloor
+            binding.editFloor,
+            binding.editDid, binding.btnChangeDid
         ).forEach { it.isEnabled = enabled }
     }
 

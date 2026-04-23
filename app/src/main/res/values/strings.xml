@@ -13,6 +13,10 @@
     <string name="hint_port">포트</string>
     <string name="hint_did">호기</string>
 
+    <!-- 엘리베이터 ID -->
+    <string name="label_elevator_id">엘리베이터 ID</string>
+    <string name="btn_change_did">변경</string>
+
     <!-- 버튼 -->
     <string name="btn_connect">연결</string>
     <string name="btn_disconnect">연결 해제</string>

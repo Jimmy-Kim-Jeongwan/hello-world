@@ -56,8 +56,7 @@ class EmsViewModel : ViewModel() {
     // ── 공개 API ──────────────────────────────────────────────────────────
 
     /** EMS 서버에 연결하고 상태 폴링을 시작한다. */
-    fun connect(host: String, port: Int, did: String) {
-        currentDid = did.padStart(2, '0')
+    fun connect(host: String, port: Int) {
         _connState.value = ConnectionState.CONNECTING
         viewModelScope.launch {
             val result = socket.connect(host, port)
@@ -70,6 +69,12 @@ class EmsViewModel : ViewModel() {
                 appendLog("❌ 연결 실패: ${result.exceptionOrNull()?.message}")
             }
         }
+    }
+
+    /** 연결 유지 중 엘리베이터 ID(호기) 변경. */
+    fun changeDid(did: String) {
+        currentDid = did.padStart(2, '0')
+        appendLog("🔄 호기 변경 → $currentDid")
     }
 
     /** 연결 종료. */
